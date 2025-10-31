@@ -183,7 +183,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Affichage de la section resultats et masquage du formulaire
         resultSection.classList.remove('hidden');
-
         resultSection.scrollIntoView({ behavior: 'smooth' });
     });
 });
