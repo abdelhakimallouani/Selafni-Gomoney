@@ -1,19 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/output.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-        rel="stylesheet">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>immobilier</title>
 </head>
 
-<body class="font-serif">
+<body>
+
     <header class="bg-blue-100 p-3 font-serif fixed top-0 left-0 w-full z-50 border-blue-700">
         <nav class=" flex justify-between items-center w-[92%] mx-auto">
             <a href="index.html">
@@ -34,96 +31,116 @@
     </header>
 
 
+    <!-- Section Formulaire -->
     <section>
-
-        <form class="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md border border-blue-400  mt-20">
-
-            <div class=" mb-6 w-full border border-blue-500 rounded-lg px-4 py-3 bg-[#ECECFF]">
-                <p class="text-[#01406c]">Taux de base pour immobilier : 3.5%</p>
-                <p class="text-sm text-[#4165F5] ">Le taux final sera ajusté en fonction de la durée de remboursement
-                </p>
+        <form id="saiser-form" class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md border border-blue-400 mt-20">
+            <div class="mb-6 w-full border border-blue-500 rounded-lg px-4 py-3 bg-[#ECECFF]">
+                <p class="text-[#01406c] font-semibold">Taux de base pour immobilier : 3.5% - 5%</p>
+                <p class="text-sm text-[#4165F5]">Le taux final sera ajuste en fonction de la duree de remboursement</p>
             </div>
-            <!-- nom Complet -->
+
+            <!-- Type de prêt -->
             <div class="mb-6">
-                <label for="nom" class="block text-sm  text-gray-700 mb-2">
+                <label for="type" class="block text-sm text-gray-700 mb-2">
+                    Type de prêt <span class="text-red-600">*</span>
+                </label>
+                <select id="type" name="type" required
+                    class="w-full px-4 py-3 border border-gray-300 outline-none rounded-lg focus:ring-0 focus:border-blue-500 transition-all duration-200">
+                    <option value="maison">Maison</option>
+                    <option value="appartement">Appartement</option>
+                    <option value="terrain">Terrain</option>
+                </select>
+            </div>
+
+            <!-- Nom Complet -->
+            <div class="mb-6">
+                <label for="nom" class="block text-sm text-gray-700 mb-2">
                     Nom complet <span class="text-red-600">*</span>
                 </label>
                 <input type="text" id="nom" name="nom" required
-                    class="w-full px-4 py-3 border border-gray-300 outline-none  rounded-lg focus:ring-0  focus:border-blue-500 transition-all duration-200"
+                    class="w-full px-4 py-3 border border-gray-300 outline-none rounded-lg focus:ring-0 focus:border-blue-500 transition-all duration-200"
                     placeholder="Votre nom complet">
             </div>
 
-            <!-- email -->
+            <!-- Email -->
             <div class="mb-6">
-                <label for="email" class="block text-sm  text-gray-700 mb-2">
+                <label for="email" class="block text-sm text-gray-700 mb-2">
                     Email address <span class="text-red-600">*</span>
                 </label>
                 <input type="email" id="email" name="email" required
-                    class="w-full px-4 py-3 border border-gray-300 outline-none rounded-lg focus:ring-0  focus:border-blue-500 transition-all duration-200"
+                    class="w-full px-4 py-3 border border-gray-300 outline-none rounded-lg focus:ring-0 focus:border-blue-500 transition-all duration-200"
                     placeholder="votre@email.com">
             </div>
 
-            <!-- tele -->
+            <!-- Telephone -->
             <div class="mb-6">
-                <label for="phone" class="block text-sm  text-gray-700 mb-2">
-                    Numéro de téléphone <span class="text-red-600">*</span>
+                <label for="phone" class="block text-sm text-gray-700 mb-2">
+                    Numero de telephone <span class="text-red-600">*</span>
                 </label>
                 <input type="tel" id="phone" name="phone" required
-                    class="w-full px-4 py-3 border border-gray-300 outline-none rounded-lg focus:ring-0  focus:border-blue-500 transition-all duration-200"
+                    class="w-full px-4 py-3 border border-gray-300 outline-none rounded-lg focus:ring-0 focus:border-blue-500 transition-all duration-200"
                     placeholder="06 00 00 00 00">
             </div>
 
             <!-- Montant Du Prêt -->
             <div class="mb-6">
-                <label for="montant" class="block text-sm  text-gray-700 mb-2">
+                <label for="montant" class="block text-sm text-gray-700 mb-2">
                     Montant du prêt <span class="text-red-600">*</span>
                 </label>
                 <div class="relative">
                     <input type="number" id="montant" name="montant" required
-                        class="w-full px-4 py-3 border border-gray-300 outline-none rounded-lg focus:ring-0  focus:border-blue-500 transition-all duration-200"
+                        class="w-full px-4 py-3 border border-gray-300 outline-none rounded-lg focus:ring-0 focus:border-blue-500 transition-all duration-200 pr-12"
                         placeholder="50000" min="0">
+                    <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500">DH</span>
                 </div>
             </div>
 
-            <!-- duree -->
+            <!-- Duree -->
             <div class="mb-6">
-                <label for="duree" class="block text-sm  text-gray-700 mb-2">
-                    Durée du remboursement <span class="text-red-600">*</span>
+                <label for="duree" class="block text-sm text-gray-700 mb-2">
+                    Duree du remboursement <span class="text-red-600">*</span>
                 </label>
                 <div class="relative">
                     <input type="number" id="duree" name="duree" required
-                        class="w-full px-4 py-3 border border-gray-300 outline-none rounded-lg focus:ring-0  focus:border-blue-500 transition-all duration-200 pr-16"
+                        class="w-full px-4 py-3 border border-gray-300 outline-none rounded-lg focus:ring-0 focus:border-blue-500 transition-all duration-200 pr-16"
                         placeholder="20" min="1" max="30">
-                    <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500">années</span>
+                    <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500">annees</span>
                 </div>
             </div>
 
-            <!-- salaire  -->
+            <!-- Salaire -->
             <div class="mb-8">
-                <label for="salaire" class="block text-sm  text-gray-700 mb-2">
-                    Salaire Mensuel Net
+                <label for="salaire" class="block text-sm text-gray-700 mb-2">
+                    Salaire Mensuel Net <span class="text-red-600">*</span>
                 </label>
                 <div class="relative">
-                    <input type="number" id="salaire" name="salaire"
-                        class="w-full px-4 py-3 border border-gray-300 outline-none rounded-lg focus:ring-0  focus:border-blue-500 transition-all duration-200 "
+                    <input type="number" id="salaire" name="salaire" required
+                        class="w-full px-4 py-3 border border-gray-300 outline-none rounded-lg focus:ring-0 focus:border-blue-500 transition-all duration-200 pr-12"
                         placeholder="2500" min="0">
+                    <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500">DH</span>
                 </div>
             </div>
 
-
-            <!-- Bouton de soumission -->
+            <!-- Bouton de calcul -->
             <button type="submit"
-                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-200 hover:scale-101 hover:shadow-lg cursor-pointer">
-                Calculer Mes Mensualités
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-200 hover:scale-[1.02] hover:shadow-lg cursor-pointer">
+                Calculer Mes Mensualites
             </button>
         </form>
     </section>
 
-    <footer class="w-full h-15 bg-blue-100 mt-10">
-        <div class="flex justify-center items-center h-full">
-            <p class="text-center">abdelhakimallouani@gmail.com</p>
+    <section id="resultSection" class="hidden max-w-4xl mx-auto mt-20">
+        <div id="resultContent" class="bg-white rounded-xl shadow-md border border-blue-300 p-6 fade-in">
+        </div>
+    </section>
+
+    <footer class="w-full bg-blue-100 py-6 mt-10">
+        <div class="flex justify-center items-center">
+            <p class="text-center text-blue-800">abdelhakimallouani@gmail.com</p>
         </div>
     </footer>
+
+    <script src="../main_js/immobilier.js"></script>
 </body>
 
 </html>
